@@ -10,13 +10,15 @@ import java.util.Set;
 
 @Entity
 public class Author {
-  private String firstName;
-  private String lastName;
-  @ManyToMany(mappedBy = "authors")
-  private Set<Book> books = new HashSet<>();
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
+
+  private String firstName;
+  private String lastName;
+
+  @ManyToMany(mappedBy = "authors")
+  private Set<Book> books = new HashSet<>();
 
   // JPA braucht einen leeren Konsruktor!
   public Author() {
