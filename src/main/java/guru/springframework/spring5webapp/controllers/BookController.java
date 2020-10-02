@@ -17,7 +17,7 @@ public class BookController {
   @RequestMapping("/books")
   public String getBooks(Model model) {
     model.addAttribute("books", bookRepository.findAll());
-
-    return "books";
+    // there have to be a template in the folder resources/templates/books which the name list
+    return "books/list";
   }
 }
